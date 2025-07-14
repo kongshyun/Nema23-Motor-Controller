@@ -147,7 +147,7 @@ USB 케이블로 PC와 ESP32 연결
 
 ### 2️⃣ 소프트웨어 빌드
 ```bash
-git clone https://github.com/shyun/Nema23-Motor-Controller.git
+git clone https://github.com/kongshyun/Nema23-Motor-Controller.git
 cd Nema23-Motor-Controller/stepperESP32
 qmake stepperESP32.pro
 make  # 또는 mingw32-make (Windows)
@@ -211,7 +211,7 @@ make  # 또는 mingw32-make (Windows)
 ## 📞 문의
 
 **개발자**: FREAKERSPACE  
-**프로젝트 링크**: [https://github.com/shyun/Nema23-Motor-Controller](https://github.com/shyun/Nema23-Motor-Controller)
+**프로젝트 링크**: [https://github.com/kongshyun/Nema23-Motor-Controller](https://github.com/kongshyun/Nema23-Motor-Controller)
 
 ## 🙏 감사의 말
 

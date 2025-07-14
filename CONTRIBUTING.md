@@ -7,7 +7,7 @@ Nema23 Stepper Motor Controller 프로젝트에 기여해주셔서 감사합니�
 ### 1. 이슈 보고
 버그를 발견하거나 새로운 기능을 제안하고 싶다면:
 
-1. [Issues](https://github.com/shyun/Nema23-Motor-Controller/issues) 페이지에서 유사한 이슈가 있는지 확인
+1. [Issues](https://github.com/kongshyun/Nema23-Motor-Controller/issues) 페이지에서 유사한 이슈가 있는지 확인
 2. 새로운 이슈 생성 시 적절한 템플릿 사용
 3. 명확하고 상세한 설명 제공
 
@@ -16,7 +16,7 @@ Nema23 Stepper Motor Controller 프로젝트에 기여해주셔서 감사합니�
 #### 개발 환경 설정
 ```bash
 # 저장소 Fork 후 Clone
-git clone https://github.com/shyun/Nema23-Motor-Controller.git
+git clone https://github.com/kongshyun/Nema23-Motor-Controller.git
 cd Nema23-Motor-Controller/stepperESP32
 
 # 개발용 브랜치 생성
