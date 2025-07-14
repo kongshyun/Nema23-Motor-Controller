@@ -58,6 +58,9 @@ private:
     void log(const QString &message);
     void updateUIForMode(MotorMode mode);
     void setUIEnabled(bool enabled);
+    void initializeTimeComboBoxes();
+    int getTotalSeconds() const;
+    void updateMotorStatus(const QString &status, const QString &color);
 
 
 

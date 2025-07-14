@@ -61,7 +61,7 @@ QFrame {
      <property name="geometry">
       <rect>
        <x>260</x>
-       <y>180</y>
+       <y>190</y>
        <width>41</width>
        <height>51</height>
       </rect>
@@ -89,7 +89,7 @@ QPushButton:hover {
      <property name="geometry">
       <rect>
        <x>21</x>
-       <y>51</y>
+       <y>61</y>
        <width>212</width>
        <height>16</height>
       </rect>
@@ -147,11 +147,53 @@ QSlider::add-page:horizontal {
       <number>10</number>
      </property>
     </widget>
+    <widget class="QLabel" name="motorStatusLED">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>10</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel {
+    background-color: gray;
+    border: 1px solid #666;
+    border-radius: 8px;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="motorStatusText">
+     <property name="geometry">
+      <rect>
+       <x>680</x>
+       <y>10</y>
+       <width>80</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;맑은 고딕&quot;;
+background-color: none;</string>
+     </property>
+     <property name="text">
+      <string>모터상태</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
     <widget class="QLabel" name="labelSpeed">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
+       <y>40</y>
        <width>81</width>
        <height>16</height>
       </rect>
@@ -169,7 +211,7 @@ font: 500 9pt &quot;맑은 고딕&quot;;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>100</y>
+       <y>110</y>
        <width>51</width>
        <height>16</height>
       </rect>
@@ -180,14 +222,14 @@ border:none;
 font: 500 9pt &quot;맑은 고딕&quot;</string>
      </property>
      <property name="text">
-      <string>모드:</string>
+      <string>입력모드:</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="rotationModeRadio">
      <property name="geometry">
       <rect>
        <x>80</x>
-       <y>100</y>
+       <y>110</y>
        <width>70</width>
        <height>16</height>
       </rect>
@@ -211,7 +253,7 @@ font: 500 9pt &quot;맑은 고딕&quot;</string>
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>100</y>
+       <y>110</y>
        <width>70</width>
        <height>16</height>
       </rect>
@@ -232,7 +274,7 @@ font: 500 9pt &quot;맑은 고딕&quot;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>120</y>
+       <y>130</y>
        <width>81</width>
        <height>16</height>
       </rect>
@@ -250,7 +292,7 @@ font: 500 9pt &quot;맑은 고딕&quot;</string>
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>180</y>
+       <y>190</y>
        <width>41</width>
        <height>21</height>
       </rect>
@@ -278,7 +320,7 @@ QPushButton:hover {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>190</y>
+       <y>200</y>
        <width>180</width>
        <height>41</height>
       </rect>
@@ -294,7 +336,7 @@ QPushButton:hover {
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>140</y>
+       <y>150</y>
        <width>211</width>
        <height>22</height>
       </rect>
@@ -319,11 +361,179 @@ QSpinBox::up-button, QSpinBox::down-button {
 </string>
      </property>
     </widget>
+    <widget class="QComboBox" name="hoursComboBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>150</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    border: 1px solid lightgray;
+    background-color: white;
+    color: black;
+    padding: 2px;
+    font: 9pt &quot;맑은 고딕&quot;;
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid lightgray;
+    width: 15px;
+}
+
+QComboBox::down-arrow {
+    image: url(&quot;:/new/prefix1/images/down-arrow.png&quot;);
+    width: 8px;
+    height: 8px;
+}</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="minutesComboBox">
+     <property name="geometry">
+      <rect>
+       <x>85</x>
+       <y>150</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    border: 1px solid lightgray;
+    background-color: white;
+    color: black;
+    padding: 2px;
+    font: 9pt &quot;맑은 고딕&quot;;
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid lightgray;
+    width: 15px;
+}
+
+QComboBox::down-arrow {
+    image: url(&quot;:/new/prefix1/images/down-arrow.png&quot;);
+    width: 8px;
+    height: 8px;
+}</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="secondsComboBox">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>150</y>
+       <width>50</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+    border: 1px solid lightgray;
+    background-color: white;
+    color: black;
+    padding: 2px;
+    font: 9pt &quot;맑은 고딕&quot;;
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid lightgray;
+    width: 15px;
+}
+
+QComboBox::down-arrow {
+    image: url(&quot;:/new/prefix1/images/down-arrow.png&quot;);
+    width: 8px;
+    height: 8px;
+}</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="timeLabel1">
+     <property name="geometry">
+      <rect>
+       <x>75</x>
+       <y>153</y>
+       <width>6</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;맑은 고딕&quot;</string>
+     </property>
+     <property name="text">
+      <string>:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="timeLabel2">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>153</y>
+       <width>6</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 9pt &quot;맑은 고딕&quot;</string>
+     </property>
+     <property name="text">
+      <string>:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="timeUnitLabel">
+     <property name="geometry">
+      <rect>
+       <x>205</x>
+       <y>153</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="visible">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+border:none;
+font: 500 8pt &quot;맑은 고딕&quot;</string>
+     </property>
+     <property name="text">
+      <string>(시:분:초)</string>
+     </property>
+    </widget>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>70</y>
+       <y>80</y>
        <width>231</width>
        <height>20</height>
       </rect>
@@ -581,7 +791,7 @@ border:none;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>170</y>
+       <y>180</y>
        <width>51</width>
        <height>16</height>
       </rect>
@@ -599,7 +809,7 @@ font: 500 9pt &quot;맑은 고딕&quot;;</string>
      <property name="geometry">
       <rect>
        <x>210</x>
-       <y>210</y>
+       <y>220</y>
        <width>41</width>
        <height>21</height>
       </rect>
@@ -627,7 +837,7 @@ QPushButton:hover {
      <property name="geometry">
       <rect>
        <x>310</x>
-       <y>20</y>
+       <y>50</y>
        <width>421</width>
        <height>131</height>
       </rect>
@@ -667,7 +877,7 @@ QPushButton:hover {
      <property name="geometry">
       <rect>
        <x>690</x>
-       <y>170</y>
+       <y>180</y>
        <width>41</width>
        <height>51</height>
       </rect>
@@ -691,6 +901,14 @@ QPushButton:hover {
       <string>STOP</string>
      </property>
     </widget>
+    <zorder>motorStatusLED</zorder>
+    <zorder>motorStatusText</zorder>
+    <zorder>hoursComboBox</zorder>
+    <zorder>minutesComboBox</zorder>
+    <zorder>secondsComboBox</zorder>
+    <zorder>timeLabel1</zorder>
+    <zorder>timeLabel2</zorder>
+    <zorder>timeUnitLabel</zorder>
     <zorder>labelMode</zorder>
     <zorder>rotationModeRadio</zorder>
     <zorder>timeModeRadio</zorder>
@@ -982,6 +1200,12 @@ QListView {
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 0, 0);</string>
      </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="horizontalScrollBarPolicy">
+      <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
+     </property>
      <property name="readOnly">
       <bool>true</bool>
      </property>
@@ -1081,9 +1305,9 @@ QListView {
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>100</y>
+      <y>101</y>
       <width>51</width>
-      <height>21</height>
+      <height>20</height>
      </rect>
     </property>
     <property name="styleSheet">
