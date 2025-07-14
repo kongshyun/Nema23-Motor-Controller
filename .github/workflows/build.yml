@@ -1,0 +1,65 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0'
+        modules: 'qtserialport'
+    
+    - name: Build Architecture Test
+      run: |
+        cd stepperESP32
+        g++ -std=c++17 test_architecture.cpp -I./inc -o test_arch
+        ./test_arch
+    
+    - name: Build Project
+      run: |
+        cd stepperESP32
+        qmake stepperESP32.pro
+        make
+  
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0'
+        arch: 'win64_mingw'
+        modules: 'qtserialport'
+    
+    - name: Build Project
+      run: |
+        cd stepperESP32
+        qmake stepperESP32.pro
+        mingw32-make
+      shell: cmd
+
+  code-quality:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run cppcheck
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cppcheck
+        cd stepperESP32
+        cppcheck --enable=all --std=c++17 --suppress=missingIncludeSystem src/ inc/

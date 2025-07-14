@@ -1,0 +1,107 @@
+# Qt/qmake generated files
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.autosave
+
+# Build directories
+build/
+build-*/
+debug/
+release/
+Debug/
+Release/
+
+# Qt Creator temporary files
+*.tmp
+*.temp
+
+# Object files
+*.o
+*.obj
+
+# Compiled libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux specific
+*~
+
+# Visual Studio / MSVC
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+*.sdf
+*.opensdf
+*.suo
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*.tlb
+*.exp
+*.ilk
+*.lib
+*.sbr
+*.sln.docstates
+*.log
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# IDE specific
+.vscode/
+.idea/
+*.creator
+*.creator.user
+*.includes
+*.files
+*.config
+
+# Backup files
+*.bak
+*.orig
+*.swp
+*.swo
+
+# Temporary directories
+tmp/
+temp/
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Test executables
+test_*
+*_test
