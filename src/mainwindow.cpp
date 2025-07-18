@@ -212,6 +212,8 @@ void MainWindow::handleSerialResponse(const QString &data)
 
     if (motorControl.processResponse(data)) {
         log(" 모터 제어기와 연결되었습니다.");
+        serialHandler->sendCommand("HI");
+        qDebug() << "전송메세지 : HI";
         ui->portComboBox->setEnabled(false);
         ui->statusLabel->setStyleSheet("QLabel { background-color: green; border:none;}");
         updateMotorStatus("연결됨", "blue");

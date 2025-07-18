@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <memory>
 #include "imotorcommand.h"
+#include "serialhandler.h"
 
 class MotorControl
 {
